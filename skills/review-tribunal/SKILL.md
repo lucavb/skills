@@ -1,17 +1,19 @@
 ---
 name: review-tribunal
 description: >-
-  Review tribunal for open PRs: blind parallel critics, adjudicate hold/reject/defer,
-  adversarial re-validation of holds, then interactive post/continue GitHub review
-  comments. Use when the user asks to review a PR, spawn a review tribunal, leave no
-  stone unturned on a pull request, or adversarially validate findings before posting.
+  Review tribunal for open PRs: PR intake, then review-core blind critics (including
+  alternatives), tribunal, adversarial validation, and interactive post/continue GitHub
+  review. Requires review-core. Use when reviewing a PR, spawning a review tribunal,
+  or adversarially validating findings before posting.
 ---
 
 # Review tribunal
 
-A **tribunal** run is the same **process** every PR: **blind** critics → adjudicate → **adversarial** validators → interactive **post/continue** GitHub review. Predictability over improvisation.
+A **tribunal** run is the same **process** every PR: intake → **review-core** (blind → tribunal → adversarial) → interactive **post/continue** GitHub review. Predictability over improvisation.
 
-This skill reviews **someone else's (or any open) PR**. When you are the implementer inside a build pipeline, ticket-to-pr-pipeline Phases 3–4 are the cousin flow — same **blind** / **tribunal** meanings; do not fork them.
+**Requires [review-core](../review-core/SKILL.md)** installed as a sibling skill.
+
+This skill reviews **someone else's (or any open) PR**. When you are the implementer building from a ticket, use [ticket-to-pr-pipeline](../ticket-to-pr-pipeline/SKILL.md) Phases 3–4 with `mode: implement` instead.
 
 ## Steps
 
@@ -25,40 +27,21 @@ This skill reviews **someone else's (or any open) PR**. When you are the impleme
 
 **Completion criterion:** PR URL, head SHA, ticket AC, changed-file list, sibling paths (or N/A), and a short intel brief ready for critic prompts.
 
-### 2. Blind critics
+### 2–4. Review core (`mode: review`)
 
-Spawn parallel **blind** judges — ticket + diff + intel facts only; no implementer rationale.
+Run [review-core](../review-core/SKILL.md) Steps 1–3 with **`mode: review`**.
 
-The lens **roster** (security, code quality, bug introduction, consistency, testing, **alternatives**, AC/behavior) is a menu of what is possible / usually required — not a mandate to run every lens every time. Details: [BLIND-REVIEW.md](BLIND-REVIEW.md).
+Inputs to pass:
+- Ticket + AC + linked tickets
+- PR diff (`gh pr diff` or `origin/main...HEAD` on PR branch)
+- Intel brief from Step 1
+- Sibling repo paths (local Read preferred)
 
-- Pick distinct lenses that fit the PR; **prefer covering** security, bugs/regressions, tests, consistency, and especially **alternatives** unless you have a reason to skip.
-- Spawn **more** freely when a thread needs depth.
-- Divert from the roster only with a **good reason** (note it on the scorecard).
-- Floor: ≥2 independent critics with different lenses.
+**Alternatives critic is required** — PR reviews must surface cleaner, simpler, or more consistent implementations, not just bugs. See [review-core/BLIND-REVIEW.md](../review-core/BLIND-REVIEW.md) and [review-core/ALTERNATIVES.md](../review-core/ALTERNATIVES.md).
 
-Paste the code-exploration rules from BLIND-REVIEW into every subagent prompt.
+Do **not** post to GitHub during review-core. Publish scorecards to the user after tribunal and after adversarial validation.
 
-**Completion criterion:** ≥2 independent reviews returned; wrong-diff reviews discarded; skipped roster lenses noted with reason.
-
-### 3. First tribunal
-
-You are the judge, not the author's advocate. For every material finding: **Holds up** / **Reject** / **Defer**.
-
-Challenge bar and common patterns: [TRIBUNAL.md](TRIBUNAL.md). Verify claims with **Read** / **Grep** / **Glob** before ruling.
-
-Publish a scorecard to the user (finding → verdict → why). Do **not** post to GitHub yet.
-
-**Completion criterion:** every material finding has an explicit verdict; user can see the audit trail.
-
-### 4. Adversarial validation
-
-Spawn a **second** wave whose job is to **disprove or downgrade** the **Holds up** items — not rubber-stamp them.
-
-Feed validators: the finding, the first-tribunal rationale, ticket/AC, sibling-repo paths, and any Atlassian/FE evidence already gathered. Details: [ADVERSARIAL.md](ADVERSARIAL.md).
-
-Re-adjudicate after validators return. Overturn freely when evidence wins.
-
-**Completion criterion:** each prior Hold has a CONFIRMED / DOWNGRADE / REJECT / UPGRADE verdict with evidence; revised scorecard published.
+**Completion criterion:** revised scorecard with adversarial verdicts on all Holds.
 
 ### 5. Interactive GitHub review
 
@@ -80,8 +63,8 @@ GitHub mechanics (pending review, JSON `comments` array, GraphQL add-thread, dif
 
 ```
 - [ ] Intake + intel (PR + AC + sibling paths + brief)
-- [ ] Blind critics (≥2 distinct lenses; roster skips noted)
-- [ ] First tribunal scorecard
-- [ ] Adversarial validation + revised scorecard
+- [ ] review-core: blind critics (≥2 lenses; alternatives required)
+- [ ] review-core: first tribunal scorecard
+- [ ] review-core: adversarial validation + revised scorecard
 - [ ] Interactive post/continue review submitted
 ```

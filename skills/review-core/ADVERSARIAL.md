@@ -21,7 +21,7 @@ Tasks:
 2. Check whether the finding misattributes the wrong entrypoint.
 3. Check pre-existing vs introduced; AC owner (BE vs FE).
 4. Verdict: CONFIRMED / DOWNGRADE (new severity) / REJECT / UPGRADE (if defer was too soft)
-5. Evidence + recommended PR action.
+5. Evidence + recommended action (PR comment for review mode; code fix for implement mode).
 ```
 
 ## What to feed them
@@ -39,9 +39,9 @@ Validators may spawn extra digs or sub-searches; prefer disproof over confirmati
 
 | Validator says | You do |
 |----------------|--------|
-| REJECT | Drop from PR comments (scorecard keeps the overturn) |
-| DOWNGRADE | Keep only if still worth a non-blocking note |
-| CONFIRMED | Remains a post candidate |
+| REJECT | Drop from PR comments / fix list (scorecard keeps the overturn) |
+| DOWNGRADE | Keep only if still worth a non-blocking note or minor fix |
+| CONFIRMED | Remains a post candidate (`review`) or fix candidate (`implement`) |
 | UPGRADE | Promote a Defer to Hold if evidence warrants |
 
 **Completion criterion:** revised scorecard; every prior Hold has an adversarial verdict.

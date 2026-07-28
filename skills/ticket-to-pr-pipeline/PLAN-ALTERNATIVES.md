@@ -1,14 +1,15 @@
-# Alternatives — comparing implementations
+# Plan alternatives — comparing implementations before build
 
 Every ticket deserves an explicit **alternatives** pass before code is written. The goal is not novelty — it is avoiding a local patch when a sibling pattern, shared signal, or smaller invariant already solves the class of bug.
 
-Survey sibling implementations with **Glob** / **Grep** / **Read** — not shell search.
+Survey sibling implementations with **Glob** / **Grep** / **Read** — see [review-core/EXPLORATION.md](../review-core/EXPLORATION.md).
+
+For **review-time** alternatives (blind critics, tribunal on a PR or branch), see [review-core/ALTERNATIVES.md](../review-core/ALTERNATIVES.md).
 
 ## When to run
 
 - **Phase 1 (required):** before the user approves the plan.
 - **Phase 2:** if implementation reveals a strictly better option than the approved plan.
-- **Phase 4 (tribunal):** when a blind reviewer proposes a different approach.
 
 ## Phase 1 — minimum comparison
 
@@ -41,21 +42,6 @@ If build-time **legwork** shows the approved approach is wrong or strictly domin
 3. Get explicit approval (or a clear "proceed anyway") before continuing.
 
 Do not bury a mid-build pivot in the final PR description.
-
-## Phase 4 — tribunal bar for alternative proposals
-
-A critic's **alternative** earns a swap (implement now) only if **all** hold:
-
-1. Fixes the ticket AC, including edge cases the current diff still mishandles.
-2. Not materially wider scope than the ticket (refactors need their own ticket unless the bug is caused by the duplication).
-3. Does not reintroduce the original bug or fail existing/new regression tests.
-4. Better on at least one of: correctness, maintainability, consistency with siblings — not merely shorter or "more pure".
-
-Verdict mapping:
-
-- Meets the bar → **Holds up** — implement or open a follow-up commit on the PR branch.
-- Valid but wider scope → **Defer** — note as improvement ticket.
-- Theoretically nicer but same behaviour / untested edge → **Reject** — document why current choice is sufficient.
 
 ## Anti-patterns
 
