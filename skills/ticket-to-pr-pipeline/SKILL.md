@@ -119,3 +119,4 @@ Copy and track:
 - [writing-commit-messages](../writing-commit-messages/SKILL.md) — commit messages on ship
 - [writing-agent-handoffs](../writing-agent-handoffs/SKILL.md) — if delegating a single phase to another agent
 - [refining-jira-tickets](../refining-jira-tickets/SKILL.md) — if the ticket itself is not ready (before Phase 1)
+- [review-tribunal](../review-tribunal/SKILL.md) — reviewing an open PR you did not just build (blind → tribunal → adversarial → post/continue)

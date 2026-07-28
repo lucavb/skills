@@ -23,6 +23,7 @@ npx skills add lucavb/skills --skill ticket-to-pr-pipeline
 |-------|-------------|------|
 | `agent-handover` | Structured handover docs so the next agent can fix, not re-investigate | [README](skills/agent-handover/README.md) |
 | `ticket-to-pr-pipeline` | End-to-end Jira ticket flow with blind review and tribunal before PR | [README](skills/ticket-to-pr-pipeline/README.md) |
+| `review-tribunal` | Adversarial PR review — blind critics, tribunal, validation, GitHub comments | [README](skills/review-tribunal/README.md) |
 | `refining-jira-tickets` | Pre-scrum refinement — trace codebase, spot plot holes, comment on Jira | [README](skills/refining-jira-tickets/README.md) |
 | `atlassian-jira-adf-formatting` | ADF round-trip for Jira story tables with bulleted Requirements/AC cells | [README](skills/atlassian-jira-adf-formatting/README.md) |
 | `writing-commit-messages` | Commit messages that explain the why, matching each repo's style | [README](skills/writing-commit-messages/README.md) |
@@ -44,7 +45,7 @@ npx skills update
 ## Prerequisites
 
 - **Jira skills** (`refining-jira-tickets`, `atlassian-jira-adf-formatting`, `ticket-to-pr-pipeline`): [Atlassian MCP](https://github.com/atlassian/atlassian-mcp-server) configured in your agent.
-- **ticket-to-pr-pipeline**: GitHub CLI (`gh`) for PR creation.
+- **ticket-to-pr-pipeline**, **review-tribunal**: GitHub CLI (`gh`) for PR creation and review.
 
 ## License
 
