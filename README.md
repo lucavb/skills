@@ -1,6 +1,6 @@
 # Agent Skills
 
-[![skills](https://img.shields.io/badge/skills-sh-lucavb%2Fskills-blue)](https://skills.sh/lucavb/skills)
+[![skills.sh](https://skills.sh/b/lucavb/skills)](https://skills.sh/lucavb/skills)
 
 Cross-agent skills for Cursor, Claude Code, and other coding agents. Install with [skills.sh](https://skills.sh) (`npx skills add`).
 
