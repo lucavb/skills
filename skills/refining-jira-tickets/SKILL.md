@@ -22,6 +22,8 @@ Work tickets in the order the user gives. Do not batch-post comments.
 
 ### 2. Legwork
 
+Apply [discover-before-planning](../discover-before-planning/SKILL.md): resolve what you can from the codebase before briefing the user.
+
 Trace the ticket against the codebase before critiquing. Spawn explore agents in parallel when the epic spans multiple areas.
 
 Order: read what the ticket says → trace code → flag **engineering gaps** for the user → surface **PO questions** only when ticket + code still leave genuine product ambiguity.

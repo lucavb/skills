@@ -25,7 +25,7 @@ Skip or shorten only when the user names a phase explicitly ("just plan", "only 
 **Mode:** plan / read-only until the user approves.
 
 1. Fetch the ticket (Jira MCP or pasted AC): summary, steps, expected vs actual, linked tickets.
-2. Do **legwork** in the codebase: find the flow, related tests, sibling implementations, prior tickets cited in AC. Use **Glob** → **Grep** → **Read** (see [review-core/EXPLORATION.md](../review-core/EXPLORATION.md)).
+2. Apply [discover-before-planning](../discover-before-planning/SKILL.md): do **legwork** in the codebase — find the flow, related tests, sibling implementations, prior tickets cited in AC. Use **Glob** → **Grep** → **Read** (see [review-core/EXPLORATION.md](../review-core/EXPLORATION.md)).
 3. Reproduce or explain reproducibility from code + ticket steps. Say clearly if manual repro is still needed.
 4. Survey **alternatives**: identify at least two viable implementation approaches (including "do nothing structural — patch locally"). For each: behaviour, scope, risk, consistency with sibling code, test cost. Name the recommended approach and why the others lose — see [PLAN-ALTERNATIVES.md](PLAN-ALTERNATIVES.md).
 5. Produce a plan (`CreatePlan` in plan mode) that includes the alternatives comparison. Cite files and essential snippets. Note scope and non-goals.
@@ -91,6 +91,7 @@ Copy and track:
 
 ## Related skills
 
+- [discover-before-planning](../discover-before-planning/SKILL.md) — close answerable questions during Phase 1 planning
 - [review-core](../review-core/SKILL.md) — required; blind review, tribunal, adversarial validation
 - [writing-commit-messages](../writing-commit-messages/SKILL.md) — commit messages on ship
 - [agent-handover](../agent-handover/SKILL.md) — if delegating a single phase to another agent

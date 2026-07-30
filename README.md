@@ -24,6 +24,7 @@ npx skills add lucavb/skills --skill ticket-to-pr-pipeline
 | Fix a Jira ticket end-to-end → PR | `review-core` + `ticket-to-pr-pipeline` |
 | Review an open PR (including "is there a cleaner way?") | `review-core` + `review-tribunal` |
 | Blind-review a local branch mid-work | `review-core` |
+| Stop deferring discovery — explore before presenting a plan | `discover-before-planning` |
 
 ```bash
 # Ticket → PR
@@ -40,6 +41,7 @@ npx skills add lucavb/skills --skill review-tribunal -g -y
 | Skill | Description | Docs |
 |-------|-------------|------|
 | `agent-handover` | Structured handover docs so the next agent can fix, not re-investigate | [README](skills/agent-handover/README.md) |
+| `discover-before-planning` | Do discovery during planning — close open questions before presenting a plan | [README](skills/discover-before-planning/README.md) |
 | `review-core` | Shared blind review, tribunal, adversarial validation (dependency of review skills) | [README](skills/review-core/README.md) |
 | `ticket-to-pr-pipeline` | End-to-end Jira ticket flow with plan, build, review-core, and PR | [README](skills/ticket-to-pr-pipeline/README.md) |
 | `review-tribunal` | Open PR review — intake, review-core, interactive GitHub comments | [README](skills/review-tribunal/README.md) |
