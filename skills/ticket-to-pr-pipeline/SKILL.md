@@ -94,6 +94,6 @@ Copy and track:
 - [discover-before-planning](../discover-before-planning/SKILL.md) — close answerable questions during Phase 1 planning
 - [review-core](../review-core/SKILL.md) — required; blind review, tribunal, adversarial validation
 - [writing-commit-messages](../writing-commit-messages/SKILL.md) — commit messages on ship
-- [agent-handover](../agent-handover/SKILL.md) — if delegating a single phase to another agent
+- [handoff](https://github.com/mattpocock/skills/blob/main/skills/productivity/handoff/SKILL.md) — if delegating a single phase to another agent (`npx skills add mattpocock/skills --skill handoff`)
 - [refining-jira-tickets](../refining-jira-tickets/SKILL.md) — if the ticket itself is not ready (before Phase 1)
 - [review-tribunal](../review-tribunal/SKILL.md) — reviewing someone else's open PR (`mode: review`)
