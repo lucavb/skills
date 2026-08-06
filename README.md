@@ -25,6 +25,8 @@ npx skills add lucavb/skills --skill ticket-to-pr-pipeline
 | Review an open PR (including "is there a cleaner way?") | `review-core` + `review-tribunal` |
 | Blind-review a local branch mid-work | `review-core` |
 | Stop deferring discovery — explore before presenting a plan | `discover-before-planning` |
+| GitHub URLs / explore remote repo source | `gh-fetch` |
+| Estimate Jira story points from done-ticket benchmarks | `story-point-estimation` |
 
 ```bash
 # Ticket → PR
@@ -45,8 +47,10 @@ npx skills add lucavb/skills --skill review-tribunal -g -y
 | `ticket-to-pr-pipeline` | End-to-end Jira ticket flow with plan, build, review-core, and PR | [README](skills/ticket-to-pr-pipeline/README.md) |
 | `review-tribunal` | Open PR review — intake, review-core, interactive GitHub comments | [README](skills/review-tribunal/README.md) |
 | `refining-jira-tickets` | Pre-scrum refinement — trace codebase, spot plot holes, comment on Jira | [README](skills/refining-jira-tickets/README.md) |
+| `story-point-estimation` | Size Jira tickets by benchmarking done work with SP set | [README](skills/story-point-estimation/README.md) |
 | `atlassian-jira-adf-formatting` | ADF round-trip for Jira story tables with bulleted Requirements/AC cells | [README](skills/atlassian-jira-adf-formatting/README.md) |
 | `writing-commit-messages` | Commit messages that explain the why, matching each repo's style | [README](skills/writing-commit-messages/README.md) |
+| `gh-fetch` | GitHub URLs via `gh` CLI; checkout when multiple file accesses foreseen | [README](skills/gh-fetch/README.md) |
 
 ### Review skill dependencies
 
@@ -71,9 +75,10 @@ npx skills update
 
 ## Prerequisites
 
-- **Jira skills** (`refining-jira-tickets`, `atlassian-jira-adf-formatting`, `ticket-to-pr-pipeline`): [Atlassian MCP](https://github.com/atlassian/atlassian-mcp-server) configured in your agent.
+- **Jira skills** (`refining-jira-tickets`, `story-point-estimation`, `atlassian-jira-adf-formatting`, `ticket-to-pr-pipeline`): [Atlassian MCP](https://github.com/atlassian/atlassian-mcp-server) configured in your agent.
 - **review-core**, **ticket-to-pr-pipeline**, **review-tribunal**: agents that support subagent/task spawning (Cursor, Claude Code).
 - **ticket-to-pr-pipeline**, **review-tribunal**: GitHub CLI (`gh`) for PR creation and review.
+- **gh-fetch**: GitHub CLI (`gh`) authenticated for fetch and clone.
 
 ## License
 
