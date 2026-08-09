@@ -27,6 +27,7 @@ npx skills add lucavb/skills --skill ticket-to-pr-pipeline
 | Stop deferring discovery — explore before presenting a plan | `discover-before-planning` |
 | GitHub URLs / explore remote repo source | `gh-fetch` |
 | Estimate Jira story points from done-ticket benchmarks | `story-point-estimation` |
+| Surface doubts and blind spots before accepting agent work | `closing-ritual` |
 
 ```bash
 # Ticket → PR
@@ -51,6 +52,7 @@ npx skills add lucavb/skills --skill review-tribunal -g -y
 | `atlassian-jira-adf-formatting` | ADF round-trip for Jira story tables with bulleted Requirements/AC cells | [README](skills/atlassian-jira-adf-formatting/README.md) |
 | `writing-commit-messages` | Commit messages that explain the why, matching each repo's style | [README](skills/writing-commit-messages/README.md) |
 | `gh-fetch` | GitHub URLs via `gh` CLI; checkout when multiple file accesses foreseen | [README](skills/gh-fetch/README.md) |
+| `closing-ritual` | Closing ritual — evidence-grounded self-report of doubts, blind spots, unverified claims | [README](skills/closing-ritual/README.md) |
 
 ### Review skill dependencies
 
