@@ -6,7 +6,7 @@ Ad-hoc ticket fixes skip structured review. Agents improvise each time — missi
 
 ## What it does
 
-Enforces a repeatable pipeline: **intake → plan (with alternatives) → user-approved build → review-core (blind review → tribunal → adversarial validation) → branch, commit, PR**. Subagents review without seeing the implementation plan; a tribunal decides which findings to fix before ship.
+Enforces a repeatable pipeline: **intake → plan (with alternatives) → user-approved build → review-core → branch, commit, PR**. After plan approval, **continuity** keeps phases 2–5 in one session — see [CONTINUITY.md](CONTINUITY.md).
 
 ## When to install
 
