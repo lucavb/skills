@@ -43,6 +43,7 @@ npx skills add lucavb/skills --skill review-tribunal -g -y
 
 | Skill | Description | Docs |
 |-------|-------------|------|
+| `conversation-handoff` | Fork a drifting topic or reset a compacted conversation into a copy-pasteable handoff | [README](skills/conversation-handoff/README.md) |
 | `discover-before-planning` | Do discovery during planning — close open questions before presenting a plan | [README](skills/discover-before-planning/README.md) |
 | `review-core` | Shared blind review, tribunal, adversarial validation (dependency of review skills) | [README](skills/review-core/README.md) |
 | `ticket-to-pr-pipeline` | End-to-end Jira ticket flow with plan, build, review-core, and PR | [README](skills/ticket-to-pr-pipeline/README.md) |
