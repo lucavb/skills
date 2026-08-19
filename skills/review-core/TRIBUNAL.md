@@ -1,11 +1,11 @@
 # Tribunal — challenge every finding
 
-The **tribunal** is where you act as judge, not advocate. Every critic recommendation earns a verdict before anything is posted or fixed.
+The **tribunal** is where you act as judge, not advocate. Every critic recommendation earns a verdict before anything is delivered or fixed.
 
 Parents set **mode** before running the tribunal:
 
 - `implement` — Holds become code changes + re-run tests (ticket-to-pr Phase 4)
-- `review` — Holds become PR-comment candidates after adversarial validation (review-tribunal)
+- `review` — Holds become review findings after adversarial validation (review-tribunal)
 
 ## Verdicts
 
@@ -13,15 +13,15 @@ Parents set **mode** before running the tribunal:
 |---------|---------|
 | **Holds up** | Real defect, AC gap, or proportionate improvement |
 | **Reject** | Wrong, misattributed entrypoint, out of scope, or cure worse than disease |
-| **Defer** | Valid follow-up, not this PR's/ticket's job |
+| **Defer** | Valid follow-up, not this change's or ticket's job |
 
 ## Actions by mode
 
 | Verdict | `implement` (ticket-to-pr) | `review` (review-tribunal) |
 |---------|---------------------------|---------------------------|
-| Holds up | Fix + test on branch | Adversarial candidate → PR comment |
-| Reject | No code; note in PR body if useful | Scorecard only; do not post |
-| Defer | Follow-up ticket; don't expand PR | Optional non-blocking comment |
+| Holds up | Fix + test on branch | Adversarial candidate → parent delivery |
+| Reject | No code; note in implementation summary if useful | Scorecard audit trail |
+| Defer | Follow-up ticket; keep implementation scope | Optional non-blocking finding |
 
 ## Challenge questions
 
@@ -69,6 +69,6 @@ Publish the scorecard to the user (finding → verdict → why). Then run **adve
 
 ### After adversarial (`review` mode)
 
-Proceed to interactive GitHub review per [review-tribunal/SKILL.md](../review-tribunal/SKILL.md) Step 5.
+Return the revised scorecard to [review-tribunal](../review-tribunal/SKILL.md) for target-specific delivery.
 
-**Completion criterion:** user can audit finding → verdict → why (and action taken, if `implement`).
+**Completion criterion:** every material finding has a traceable verdict and rationale; `implement` mode also records the action taken.

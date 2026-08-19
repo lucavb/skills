@@ -49,7 +49,7 @@ Run [review-core](../review-core/SKILL.md) Steps 1–3 with **`mode: implement`*
 
 **Phase 3 inputs** (blind critics):
 - Ticket text and AC (and linked tickets if relevant)
-- Branch diff or changed files (`git diff origin/main...HEAD` or uncommitted diff)
+- Source manifest from [review-core](../review-core/SKILL.md), populated with the exact branch or uncommitted diff and changed files
 - Pointers to sibling/reference implementations in the repo
 - Instruction: be skeptical; severity-tag findings; assume the fix may be wrong
 
@@ -90,4 +90,4 @@ Update after each phase. Pipeline-complete when Phase 5 is checked **or** the us
 - [writing-commit-messages](../writing-commit-messages/SKILL.md) — commit messages on ship
 - [conversation-handoff](../conversation-handoff/SKILL.md) — if delegating a single phase to another agent
 - [refining-jira-tickets](../refining-jira-tickets/SKILL.md) — if the ticket itself is not ready (before Phase 1)
-- [review-tribunal](../review-tribunal/SKILL.md) — reviewing someone else's open PR (`mode: review`)
+- [review-tribunal](../review-tribunal/SKILL.md) — reviewing a PR or local diff without implementing it (`mode: review`)

@@ -22,8 +22,8 @@ npx skills add lucavb/skills --skill ticket-to-pr-pipeline
 | You want to… | Install |
 |--------------|---------|
 | Fix a Jira ticket end-to-end → PR | `review-core` + `ticket-to-pr-pipeline` |
-| Review an open PR (including "is there a cleaner way?") | `review-core` + `review-tribunal` |
-| Blind-review a local branch mid-work | `review-core` |
+| Review an open PR or local diff (including "is there a cleaner way?") | `review-core` + `review-tribunal` |
+| Run the blind-review engine directly on a local branch | `review-core` |
 | Stop deferring discovery — explore before presenting a plan | `discover-before-planning` |
 | GitHub URLs / explore remote repo source | `gh-fetch` |
 | Estimate Jira story points from done-ticket benchmarks | `story-point-estimation` |
@@ -34,7 +34,7 @@ npx skills add lucavb/skills --skill ticket-to-pr-pipeline
 npx skills add lucavb/skills --skill review-core -g -y
 npx skills add lucavb/skills --skill ticket-to-pr-pipeline -g -y
 
-# PR review
+# PR or local-diff tribunal
 npx skills add lucavb/skills --skill review-core -g -y
 npx skills add lucavb/skills --skill review-tribunal -g -y
 ```
@@ -45,9 +45,9 @@ npx skills add lucavb/skills --skill review-tribunal -g -y
 |-------|-------------|------|
 | `conversation-handoff` | Fork a drifting topic or reset a compacted conversation into a copy-pasteable handoff | [README](skills/conversation-handoff/README.md) |
 | `discover-before-planning` | Do discovery during planning — close open questions before presenting a plan | [README](skills/discover-before-planning/README.md) |
-| `review-core` | Shared blind review, tribunal, adversarial validation (dependency of review skills) | [README](skills/review-core/README.md) |
+| `review-core` | Shared blind review, tribunal, and adversarial validation engine | [README](skills/review-core/README.md) |
 | `ticket-to-pr-pipeline` | End-to-end Jira ticket flow with plan, build, review-core, and PR | [README](skills/ticket-to-pr-pipeline/README.md) |
-| `review-tribunal` | Open PR review — intake, review-core, interactive GitHub comments | [README](skills/review-tribunal/README.md) |
+| `review-tribunal` | PR or local-diff review — intake, review-core, target-specific delivery | [README](skills/review-tribunal/README.md) |
 | `refining-jira-tickets` | Pre-scrum refinement — trace codebase, spot plot holes, comment on Jira | [README](skills/refining-jira-tickets/README.md) |
 | `story-point-estimation` | Size Jira tickets by benchmarking done work with SP set | [README](skills/story-point-estimation/README.md) |
 | `atlassian-jira-adf-formatting` | ADF round-trip for Jira story tables with bulleted Requirements/AC cells | [README](skills/atlassian-jira-adf-formatting/README.md) |
@@ -80,7 +80,8 @@ npx skills update
 
 - **Jira skills** (`refining-jira-tickets`, `story-point-estimation`, `atlassian-jira-adf-formatting`, `ticket-to-pr-pipeline`): [Atlassian MCP](https://github.com/atlassian/atlassian-mcp-server) configured in your agent.
 - **review-core**, **ticket-to-pr-pipeline**, **review-tribunal**: agents that support subagent/task spawning (Cursor, Claude Code).
-- **ticket-to-pr-pipeline**, **review-tribunal**: GitHub CLI (`gh`) for PR creation and review.
+- **ticket-to-pr-pipeline**: GitHub CLI (`gh`) for PR creation.
+- **review-tribunal**: GitHub CLI (`gh`) only for PR intake and posting; local-diff reviews use Git.
 - **gh-fetch**: GitHub CLI (`gh`) authenticated for fetch and clone.
 
 ## License

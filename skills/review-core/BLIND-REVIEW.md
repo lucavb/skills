@@ -4,7 +4,7 @@ Reviewers are **blind**: ticket + diff + intel facts only — no implementer rat
 
 The table below is a **roster**, not a mandatory checklist. It shows what is *possible* and usually *worth covering*. Pick the lenses that fit the change; skip what is clearly irrelevant; **spawn more** when a thread needs depth. Divert from the roster when you have a **good reason** (state it briefly in the scorecard).
 
-**Alternatives is a default lens, not optional fluff.** Every review run must include a dedicated alternatives critic unless the diff is truly trivial (rename only, config bump, etc.; note skip on scorecard). For `mode: review` (PR review), the alternatives critic is **required** — the user wants to know if there is a cleaner, simpler, or more consistent implementation.
+**Alternatives is a default lens, not optional fluff.** Every review run must include a dedicated alternatives critic unless the diff is truly trivial (rename only, config bump, etc.; note skip on scorecard). For `mode: review`, the alternatives critic is **required** — the user wants to know if there is a cleaner, simpler, or more consistent implementation.
 
 ## Roster
 
@@ -29,20 +29,21 @@ Gather enough context to judge correctness — critics and the parent agent both
 - Ticket AC, comments, linked tickets, epic scope (FE vs BE ownership)
 - Email/URL routing, FE consumers, glossary/error wiring (ask for sibling repo paths; prefer local **Read**)
 - Sibling implementations in-repo the change should match or consciously diverge from
-- Prior art on `main` (is this pre-existing?)
+- Prior art on the resolved base (is this pre-existing?)
 
 Pass useful intel **into** critic prompts as facts (paths, AC text, linked keys) — not as "the author meant X."
 
 ## Prompt skeleton
 
-Use this shape for every reviewer. Replace `{ROLE}`, `{FOCUS}`, `{DIFF_SOURCE}`, and `{MODE}`.
+Use this shape for every reviewer. Replace `{ROLE}`, `{FOCUS}`, `{SOURCE_MANIFEST}`, and `{MODE}`.
 
 ```
 You are an independent critical reviewer. Your role: {ROLE}.
 
 Mode: {MODE}  (implement | review)
 Repo: {FULL_REPO_PATH}
-Diff: {DIFF_SOURCE}  (e.g. origin/main...HEAD on branch X, commit SHA, or uncommitted changes)
+Source manifest:
+{SOURCE_MANIFEST}
 Ticket: {KEY} — {SUMMARY}
 {PASTE DESCRIPTION / AC / LINKED TICKETS}
 
@@ -51,7 +52,7 @@ Changed files: {LIST}
 Reference files for comparison (read in repo; do not assume parity is required):
 - {SIBLING_OR_REFERENCE_PATHS}
 
-Sibling checkouts (if provided — prefer local Read/Grep over gh api for source):
+Sibling checkouts (if provided — prefer local Read/Grep for source):
 - {LOCAL_SIBLING_PATHS}
 
 Intel already gathered (facts only, not author intent):

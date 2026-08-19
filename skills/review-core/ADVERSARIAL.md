@@ -6,12 +6,14 @@ After the first tribunal, spawn validators whose job is to **disprove or downgra
 
 ```
 You are an ADVERSARIAL validator. Try to DISPROVE or DOWNGRADE this tribunal finding.
-Do not rubber-stamp. Be skeptical of both the PR and the tribunal.
+Challenge both the change and the tribunal; confirmation requires evidence.
 
 Finding: {ID} — {SEVERITY} — {TITLE}
 Tribunal rationale: {SUMMARY}
 
-Repo: {PATH} (PR branch)
+Repo: {PATH} @ {HEAD_REF_OR_SHA}
+Source manifest:
+{SOURCE_MANIFEST}
 Sibling repos (local): {PATHS}
 Ticket / AC excerpts: {…}
 Extra context (Jira links, FE wiring, email URL routing, prior tickets): {…}
@@ -21,7 +23,7 @@ Tasks:
 2. Check whether the finding misattributes the wrong entrypoint.
 3. Check pre-existing vs introduced; AC owner (BE vs FE).
 4. Verdict: CONFIRMED / DOWNGRADE (new severity) / REJECT / UPGRADE (if defer was too soft)
-5. Evidence + recommended action (PR comment for review mode; code fix for implement mode).
+5. Evidence + recommended action (review finding for review mode; code fix for implement mode).
 ```
 
 ## What to feed them
@@ -30,7 +32,7 @@ Tasks:
 - Ticket AC and linked tickets (e.g. email-bind sibling)
 - Local sibling checkouts for FE toast/routing
 - Production URL routing (email processor → path params)
-- Existing PR bot comments (often wrong — useful as counter-examples)
+- Existing automated review comments (useful as claims to verify)
 - Enough **intel** to re-judge correctness (real entrypoint, FE vs BE ownership, pre-existing vs introduced)
 
 Validators may spawn extra digs or sub-searches; prefer disproof over confirmation.
@@ -39,9 +41,9 @@ Validators may spawn extra digs or sub-searches; prefer disproof over confirmati
 
 | Validator says | You do |
 |----------------|--------|
-| REJECT | Drop from PR comments / fix list (scorecard keeps the overturn) |
-| DOWNGRADE | Keep only if still worth a non-blocking note or minor fix |
-| CONFIRMED | Remains a post candidate (`review`) or fix candidate (`implement`) |
+| REJECT | Drop from delivered findings / fix list (scorecard keeps the overturn) |
+| DOWNGRADE | Retain only when still worth a non-blocking finding or minor fix |
+| CONFIRMED | Remains a delivery candidate (`review`) or fix candidate (`implement`) |
 | UPGRADE | Promote a Defer to Hold if evidence warrants |
 
 **Completion criterion:** revised scorecard; every prior Hold has an adversarial verdict.

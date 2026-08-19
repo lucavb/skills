@@ -1,6 +1,6 @@
 # Alternatives — review-time bar
 
-When a blind critic or tribunal evaluates "do X instead" on a PR or branch, apply this bar. The goal is surfacing genuinely cleaner, simpler, or more consistent implementations — not elegance for its own sake.
+When a blind critic or tribunal evaluates "do X instead" in a reviewed diff, apply this bar. The goal is surfacing genuinely cleaner, simpler, or more consistent implementations — not elegance for its own sake.
 
 Survey sibling implementations with **Glob** / **Grep** / **Read** — not shell search.
 
@@ -24,9 +24,9 @@ A critic's **alternative** earns a swap only if **all** hold:
 
 | Outcome | Verdict | `implement` action | `review` action |
 |---------|---------|-------------------|-----------------|
-| Meets the bar | **Holds up** | Fix on branch + re-run tests | PR comment (blocker if correctness gap; major if meaningful simplification) |
-| Valid but wider scope | **Defer** | Follow-up ticket; do not expand PR | Optional non-blocking PR note |
-| Theoretically nicer, same behaviour / untested edge | **Reject** | No code change; note why if useful | Scorecard only; do not post |
+| Meets the bar | **Holds up** | Fix on branch + re-run tests | Deliver finding (blocker if correctness gap; major if meaningful simplification) |
+| Valid but wider scope | **Defer** | Follow-up ticket; keep implementation scope | Optional non-blocking finding |
+| Theoretically nicer, same behaviour / untested edge | **Reject** | No code change; note why if useful | Scorecard audit trail |
 
 ## Anti-patterns
 
