@@ -39,6 +39,7 @@ For `local-diff`, follow [LOCAL-DIFF.md](LOCAL-DIFF.md). Its source manifest is 
 2. Pull linked tickets and epic context when they change blast radius or ownership.
 3. Ask for sibling-repo paths when the AC spans FE/libs.
 4. Skim entrypoint routing, sibling implementations, and prior art on the base — facts only, not author intent.
+5. When the target has commits, include commit SHAs in the source manifest.
 
 **Completion criterion:** ticket/AC (or explicitly N/A), sibling paths (or N/A), and a factual intel brief are ready for critic prompts.
 
@@ -52,7 +53,7 @@ Inputs to pass:
 - Intel brief from Step 2
 - Sibling repo paths (local Read preferred)
 
-**Alternatives critic is required** — reviews must surface cleaner, simpler, or more consistent implementations, not just bugs. See [review-core/BLIND-REVIEW.md](../review-core/BLIND-REVIEW.md) and [review-core/ALTERNATIVES.md](../review-core/ALTERNATIVES.md).
+**Alternatives critic is required** — reviews must surface cleaner, simpler, or more consistent implementations, not just bugs. **Hygiene critic** when manifest lists commits — [review-core/COMMIT-HYGIENE.md](../review-core/COMMIT-HYGIENE.md). See [review-core/BLIND-REVIEW.md](../review-core/BLIND-REVIEW.md) and [review-core/ALTERNATIVES.md](../review-core/ALTERNATIVES.md).
 
 Publish scorecards to the user after tribunal and adversarial validation. Delivery begins only after the revised scorecard.
 
@@ -71,7 +72,7 @@ For `github-pr`, walk remaining Holds and intentional Defer notes with the user 
 ```
 - [ ] Target selected; exact diff source recorded
 - [ ] Ticket/AC + sibling paths + intel brief
-- [ ] review-core: blind critics (≥2 lenses; alternatives required)
+- [ ] review-core: blind critics (≥2 lenses; alternatives required; hygiene run or skip noted)
 - [ ] review-core: first tribunal scorecard
 - [ ] review-core: adversarial validation + revised scorecard
 - [ ] Target-specific delivery complete

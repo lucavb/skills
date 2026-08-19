@@ -35,6 +35,7 @@ Verify with **Read** / **Grep** / **Glob** before ruling — not shell `find`/`r
 6. **Wrong door?** Did the critic blame the wrong URL/API/FE path? (Classic overturn: anonymous redirect vs farm email CTA.)
 7. **Alternative?** If "do X instead" — does X win on the bar in [ALTERNATIVES.md](ALTERNATIVES.md), or is it scope creep / elegance-only?
 8. **Better alternative?** Apply the review-time bar in [ALTERNATIVES.md](ALTERNATIVES.md); reject elegance-only proposals.
+9. **Hygiene** Holds/Rejects: [COMMIT-HYGIENE.md](COMMIT-HYGIENE.md). Challenge: fixable before merge (split, restage, amend, rewrite message)?
 
 ## Common Reject patterns
 

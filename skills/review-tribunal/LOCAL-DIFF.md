@@ -35,13 +35,14 @@ Use read-only Git commands to establish:
 - repository root and current branch or detached-head state;
 - resolved base/range and `git rev-parse HEAD`;
 - changed-file list for every included component;
+- when the range includes commits, commit count, SHAs, and the `git log` commands used — per [COMMIT-HYGIENE.md](../review-core/COMMIT-HYGIENE.md);
 - non-empty diff content.
 
 An empty resolved source ends intake with a concise “no changes to review” result. A missing or ambiguous ref returns to the user for one focused base choice.
 
 ## Source manifest
 
-Set `Target` to `local-diff`, put the exact range and working-tree sources in `Diff source`, and list every Git command used to obtain them. Pass the completed manifest to every critic and validator, then reproduce it in both scorecards and the final report.
+Set `Target` to `local-diff`, put the exact range and working-tree sources in `Diff source`, and list every Git command used to obtain them. When the range includes commits, populate `Commits in range`, `Commit SHAs`, and `Commit commands` in the manifest. Pass the completed manifest to every critic and validator, then reproduce it in both scorecards and the final report.
 
 Critic output that addresses files or revisions outside the manifest is a wrong-diff review and does not enter the tribunal.
 

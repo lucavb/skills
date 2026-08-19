@@ -52,6 +52,7 @@ Run [review-core](../review-core/SKILL.md) Steps 1–3 with **`mode: implement`*
 - Source manifest from [review-core](../review-core/SKILL.md), populated with the exact branch or uncommitted diff and changed files
 - Pointers to sibling/reference implementations in the repo
 - Instruction: be skeptical; severity-tag findings; assume the fix may be wrong
+- Hygiene critic when manifest lists commits — [review-core/COMMIT-HYGIENE.md](../review-core/COMMIT-HYGIENE.md)
 
 **Withhold from critics:** implementer rationale, plan-file reasoning, chosen-approach narrative — see [review-core/BLIND-REVIEW.md](../review-core/BLIND-REVIEW.md). Tribunal alternatives: [review-core/ALTERNATIVES.md](../review-core/ALTERNATIVES.md).
 
@@ -66,7 +67,7 @@ Run [review-core](../review-core/SKILL.md) Steps 1–3 with **`mode: implement`*
 
 1. Branch from `main` (not an unrelated feature branch) unless the user specifies otherwise.
 2. Stage **only** files for this ticket — exclude unrelated local changes (`package.json`, debug logs, etc.).
-3. Commit using [writing-commit-messages](../writing-commit-messages/SKILL.md) style for this repo.
+3. Commit using [writing-commit-messages](../writing-commit-messages/SKILL.md) style for this repo. Unresolved hygiene Holds from Phase 3–4 block ship.
 4. Push and open PR with `gh pr create` (summary, test plan). Return the PR URL.
 
 **Completion criterion:** PR URL delivered; branch contains only intentional ticket changes.

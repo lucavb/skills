@@ -39,6 +39,9 @@ Diff source: {EXACT_PR_RANGE_COMMIT_OR_WORKTREE_SOURCE}
 Working-tree components: {STAGED | UNSTAGED | UNTRACKED | NONE}
 Commands: {EXACT_READ_ONLY_SOURCE_COMMANDS}
 Changed files: {DEDUPLICATED_LIST}
+Commits in range: {COUNT | 0}
+Commit SHAs: {LIST | N/A}
+Commit commands: {commands that produced the list | N/A}
 ```
 
 ## Step 1 — Blind critics
@@ -49,6 +52,7 @@ Details: [BLIND-REVIEW.md](BLIND-REVIEW.md).
 
 - Pick distinct lenses from the roster; floor ≥2 independent critics.
 - **Alternatives critic is required** for `mode: review`; default for `mode: implement` unless diff is trivial (note skip on scorecard).
+- Manifest lists commits → spawn hygiene critic per [COMMIT-HYGIENE.md](COMMIT-HYGIENE.md).
 - Paste [EXPLORATION.md](EXPLORATION.md) rules into every subagent prompt.
 
 **Completion criterion:** ≥2 independent reviews returned; wrong-diff reviews discarded; skipped roster lenses noted with reason.
@@ -87,7 +91,7 @@ Re-adjudicate after validators return. Overturn freely when evidence wins.
 ## Checklist
 
 ```
-- [ ] Blind critics (≥2 distinct lenses; alternatives unless trivial skip noted)
+- [ ] Blind critics (≥2 distinct lenses; alternatives unless trivial skip noted; hygiene run or skip noted)
 - [ ] First tribunal scorecard
 - [ ] Adversarial validation + revised scorecard
 - [ ] Parent handoff (target-specific review delivery or implement fixes)

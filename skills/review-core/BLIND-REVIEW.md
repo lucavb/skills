@@ -17,6 +17,9 @@ The table below is a **roster**, not a mandatory checklist. It shows what is *po
 | **Testing** | Coverage vs AC, mocks that fake success, untested false branches, e2e that never hits the new path |
 | **Alternatives** | Simpler or more principled designs; align-with-sibling options; unnecessary branching/abstraction; what to swap now vs defer — not elegance for its own sake |
 | **AC / behavior** | Ticket AC vs code; FE-only clauses; wrong-entrypoint risk |
+| **Hygiene** | Atomicity, scope, message alignment, history noise, repo log style |
+
+Manifest lists commits → spawn dedicated hygiene critic; see [COMMIT-HYGIENE.md](COMMIT-HYGIENE.md). No commits in manifest → skip; note on scorecard. Working-tree: staged scope only per COMMIT-HYGIENE.md.
 
 Specialized subagents (`security-review`, `bugbot`, explore-heavy consistency) are fine when they sharpen a lens — still **blind**, still severity-tagged.
 
