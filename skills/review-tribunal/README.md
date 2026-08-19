@@ -13,8 +13,10 @@ Enforces a repeatable review pipeline for an open PR or local Git diff: **target
 Install when you want adversarial review of an open PR, `main...HEAD`, a commit range, or working-tree changes — including “is there a cleaner way?” alternatives findings.
 
 ```bash
-npx skills add lucavb/skills --skill review-core -g -y
-npx skills add lucavb/skills --skill review-tribunal -g -y
+npx skills add lucavb/skills --skill review-core \
+  -a cursor -a claude-code -a codex -a opencode -a zed -g -y
+npx skills add lucavb/skills --skill review-tribunal \
+  -a cursor -a claude-code -a codex -a opencode -a zed -g -y
 ```
 
 ## Prerequisites

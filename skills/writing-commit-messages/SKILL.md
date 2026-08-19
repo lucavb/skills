@@ -1,6 +1,9 @@
 ---
 name: writing-commit-messages
-description: Commit message pass for writing or running a git commit: use when a staged diff needs a message, when a user asks for commit-message help, or when another skill hands off a commit.
+description: >-
+  Commit message pass for writing or running a git commit: use when a staged diff
+  needs a message, when a user asks for commit-message help, or when another skill
+  hands off a commit.
 ---
 
 ## Commit-message pass

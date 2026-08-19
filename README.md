@@ -10,8 +10,9 @@ Cross-agent skills for Cursor, Claude Code, and other coding agents. Install wit
 # List available skills
 npx skills add lucavb/skills --list
 
-# Install all skills
-npx skills add lucavb/skills --skill '*' -g -y
+# Install all skills (global, common agents)
+npx skills add lucavb/skills --skill '*' \
+  -a cursor -a claude-code -a codex -a opencode -a zed -g -y
 
 # Install one skill (review skills need review-core too — see below)
 npx skills add lucavb/skills --skill ticket-to-pr-pipeline
@@ -31,12 +32,16 @@ npx skills add lucavb/skills --skill ticket-to-pr-pipeline
 
 ```bash
 # Ticket → PR
-npx skills add lucavb/skills --skill review-core -g -y
-npx skills add lucavb/skills --skill ticket-to-pr-pipeline -g -y
+npx skills add lucavb/skills --skill review-core \
+  -a cursor -a claude-code -a codex -a opencode -a zed -g -y
+npx skills add lucavb/skills --skill ticket-to-pr-pipeline \
+  -a cursor -a claude-code -a codex -a opencode -a zed -g -y
 
 # PR or local-diff tribunal
-npx skills add lucavb/skills --skill review-core -g -y
-npx skills add lucavb/skills --skill review-tribunal -g -y
+npx skills add lucavb/skills --skill review-core \
+  -a cursor -a claude-code -a codex -a opencode -a zed -g -y
+npx skills add lucavb/skills --skill review-tribunal \
+  -a cursor -a claude-code -a codex -a opencode -a zed -g -y
 ```
 
 ## Skills
@@ -65,16 +70,26 @@ npx skills add lucavb/skills --skill review-tribunal -g -y
 ## Options
 
 ```bash
-# Global install (all projects)
-npx skills add lucavb/skills --skill <name> -g -y
+# Global install for common agents (recommended)
+npx skills add lucavb/skills --skill <name> \
+  -a cursor -a claude-code -a codex -a opencode -a zed -g -y
 
-# Target a specific agent
+# Global install for Cursor only
+npx skills add lucavb/skills --skill <name> -a cursor -g -y
+
+# Project install, target a specific agent
 npx skills add lucavb/skills --skill <name> -a cursor -y
 
 # Check for updates
 npx skills check
 npx skills update
 ```
+
+### Global install notes
+
+- Prefer `-a` with global installs (`-g -y`). Bare `-g -y` without `-a` can show `Failed to install 1` for PromptScript even when the skill installed correctly into `~/.agents/skills/`.
+- PromptScript is project-only in the `skills` CLI. Target agents explicitly, or ignore the footer if the skill path exists.
+- `review-tribunal` and `ticket-to-pr-pipeline` require `review-core` — install both.
 
 ## Prerequisites
 
