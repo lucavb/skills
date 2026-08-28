@@ -24,11 +24,11 @@ npx skills add lucavb/skills --skill ticket-to-pr-pipeline
 |--------------|---------|
 | Fix a Jira ticket end-to-end → PR | `review-core` + `ticket-to-pr-pipeline` |
 | Review an open PR or local diff (including "is there a cleaner way?") | `review-core` + `review-tribunal` |
-| Run the blind-review engine directly on a local branch | `review-core` |
 | Stop deferring discovery — explore before presenting a plan | `discover-before-planning` |
 | GitHub URLs / explore remote repo source | `gh-fetch` |
 | Estimate Jira story points from done-ticket benchmarks | `story-point-estimation` |
 | Surface doubts and blind spots before accepting agent work | `closing-ritual` |
+| Angular pages, forms, signals, and encapsulated SCSS | `angular` |
 
 ```bash
 # Ticket → PR
@@ -60,6 +60,7 @@ npx skills add lucavb/skills --skill review-tribunal \
 | `plainspoken-writing` | Evidence-first editing pass for direct, specific, proportionate prose | [README](skills/plainspoken-writing/README.md) |
 | `gh-fetch` | GitHub URLs via `gh` CLI; checkout when multiple file accesses foreseen | [README](skills/gh-fetch/README.md) |
 | `closing-ritual` | Closing ritual — evidence-grounded self-report of doubts, blind spots, unverified claims | [README](skills/closing-ritual/README.md) |
+| `angular` | Zoneless Angular — signals, toSignal, shells, encapsulated styles | [README](skills/angular/README.md) |
 
 ### Review skill dependencies
 
