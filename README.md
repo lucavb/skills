@@ -56,7 +56,7 @@ npx skills add lucavb/skills --skill review-tribunal \
 | `refining-jira-tickets` | Pre-scrum refinement — trace codebase, spot plot holes, comment on Jira | [README](skills/refining-jira-tickets/README.md) |
 | `story-point-estimation` | Size Jira tickets by benchmarking done work with SP set | [README](skills/story-point-estimation/README.md) |
 | `atlassian-jira-adf-formatting` | ADF round-trip for Jira story tables with bulleted Requirements/AC cells | [README](skills/atlassian-jira-adf-formatting/README.md) |
-| `writing-commit-messages` | Commit messages that explain the why, matching each repo's style | [README](skills/writing-commit-messages/README.md) |
+| `writing-commit-messages` | Required gate before every commit — why-grounded messages matching each repo's style | [README](skills/writing-commit-messages/README.md) |
 | `plainspoken-writing` | Evidence-first editing pass for direct, specific, proportionate prose | [README](skills/plainspoken-writing/README.md) |
 | `gh-fetch` | GitHub URLs via `gh` CLI; checkout when multiple file accesses foreseen | [README](skills/gh-fetch/README.md) |
 | `closing-ritual` | Closing ritual — evidence-grounded self-report of doubts, blind spots, unverified claims | [README](skills/closing-ritual/README.md) |
