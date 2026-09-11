@@ -28,6 +28,7 @@ npx skills add lucavb/skills --skill ticket-to-pr-pipeline
 | GitHub URLs / explore remote repo source | `gh-fetch` |
 | Estimate Jira story points from done-ticket benchmarks | `story-point-estimation` |
 | Surface doubts and blind spots before accepting agent work | `closing-ritual` |
+| Condense the preceding assistant answer | `tldr` |
 | Angular pages, forms, signals, and encapsulated SCSS | `angular` |
 
 ```bash
@@ -60,6 +61,7 @@ npx skills add lucavb/skills --skill review-tribunal \
 | `plainspoken-writing` | Evidence-first editing pass for direct, specific, proportionate prose | [README](skills/plainspoken-writing/README.md) |
 | `gh-fetch` | GitHub URLs via `gh` CLI; checkout when multiple file accesses foreseen | [README](skills/gh-fetch/README.md) |
 | `closing-ritual` | Closing ritual — evidence-grounded self-report of doubts, blind spots, unverified claims | [README](skills/closing-ritual/README.md) |
+| `tldr` | Condense the immediately preceding assistant answer into a direct TL;DR | [SKILL](skills/tldr/SKILL.md) |
 | `angular` | Zoneless Angular — signals, toSignal, shells, encapsulated styles | [README](skills/angular/README.md) |
 
 ### Review skill dependencies
