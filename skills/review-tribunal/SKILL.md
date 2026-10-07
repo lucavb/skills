@@ -40,8 +40,9 @@ For `local-diff`, follow [LOCAL-DIFF.md](LOCAL-DIFF.md). Its source manifest is 
 3. Ask for sibling-repo paths when the AC spans FE/libs.
 4. Skim entrypoint routing, sibling implementations, and prior art on the base — facts only, not author intent.
 5. When the target has commits, include commit SHAs in the source manifest.
+6. If PR/ticket metadata references an upstream/downstream PR, shared event/API/schema, or dependency snapshot, read the linked contract and at least one consumer before making a semantic or compatibility finding; do not substitute ticket shorthand or PR rationale for the contract.
 
-**Completion criterion:** ticket/AC (or explicitly N/A), sibling paths (or N/A), and a factual intel brief are ready for critic prompts.
+**Completion criterion:** ticket/AC (or explicitly N/A), sibling paths (or N/A), linked sources inspected (or N/A with reason), and a factual intel brief are ready for critic prompts.
 
 ### 3–5. Review core (`mode: review`)
 

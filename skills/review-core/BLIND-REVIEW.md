@@ -33,8 +33,9 @@ Gather enough context to judge correctness — critics and the parent agent both
 - Email/URL routing, FE consumers, glossary/error wiring (ask for sibling repo paths; prefer local **Read**)
 - Sibling implementations in-repo the change should match or consciously diverge from
 - Prior art on the resolved base (is this pre-existing?)
+- When metadata references an upstream/downstream PR, shared event/API/schema, or dependency snapshot: linked contract and at least one consumer inspected before semantic or compatibility findings.
 
-Pass useful intel **into** critic prompts as facts (paths, AC text, linked keys) — not as "the author meant X."
+Pass useful intel **into** critic prompts as facts (paths, AC text, linked keys, and inspected linked-contract/consumer sources) — not as "the author meant X." If no such reference exists, pass N/A and the reason.
 
 ## Prompt skeleton
 
@@ -66,6 +67,7 @@ Focus your critique on: {FOCUS}
 Rules:
 - Code exploration: see EXPLORATION.md (Glob/Grep/Read; Shell only for tests/git/gh/installs)
 - Gather more intel if needed to judge correctness (sibling flows, FE entrypoints, ticket links).
+- Use the linked-contract and consumer facts supplied in Intel for semantic or compatibility findings; remain blind to implementer rationale.
 - Do not assume the implementer's approach is correct.
 - Severity-tag every finding: blocker / major / minor / nit.
 - Cite file paths and line regions where possible.
