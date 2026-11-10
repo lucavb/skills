@@ -6,11 +6,13 @@ Ad-hoc reviews skip blind critics, tribunal, and adversarial validation. Finding
 
 ## What it does
 
-Enforces a repeatable review pipeline for an open PR or local Git diff: **targeted intake + intel → review-core (blind critics including alternatives → tribunal → adversarial validation) → delivery**. Local reviews end in an evidence-linked scorecard; PR reviews continue through interactive GitHub posting.
+Enforces a repeatable review pipeline for an open PR, a set of related PRs, or a local Git diff: **targeted intake + intel → review-core (blind critics including alternatives → tribunal → adversarial validation) → delivery**. Local reviews end in an evidence-linked scorecard; PR reviews continue through interactive GitHub posting, one pending review per PR.
+
+PR reviews pin each head SHA and read from a clean matching checkout, else an isolated detached worktree, else (with approval) a stash that is restored afterwards. Your existing checkout is not changed otherwise.
 
 ## When to install
 
-Install when you want adversarial review of an open PR, `main...HEAD`, a commit range, or working-tree changes — including “is there a cleaner way?” alternatives findings.
+Install when you want adversarial review of an open PR or several related PRs, `main...HEAD`, a commit range, or working-tree changes — including “is there a cleaner way?” alternatives findings.
 
 ```bash
 npx skills add lucavb/skills --skill review-core \
@@ -25,3 +27,4 @@ npx skills add lucavb/skills --skill review-tribunal \
 - Agents that support subagent/task spawning (Cursor, Claude Code)
 - [Atlassian MCP](https://github.com/atlassian/atlassian-mcp-server) when Jira ticket/AC intake is needed
 - `gh` CLI only for GitHub PR intake and posting; local-diff reviews use Git
+- Optional: a `worktrees` skill (not part of this repo) that sets worktree paths and approvals; without it, worktrees go under `$TMPDIR` after approval

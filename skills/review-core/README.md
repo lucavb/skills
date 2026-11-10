@@ -10,7 +10,7 @@ Shared adversarial review engine: **blind parallel critics** (including a requir
 
 Not usually installed alone. Parent skills set `mode`:
 
-- `review` — findings return to review-tribunal for local reporting or GitHub delivery
+- `review` — findings return to review-tribunal for local reporting or GitHub delivery; several PRs can be reviewed as one set with per-PR attribution
 - `implement` — findings become code fixes on the branch (via ticket-to-pr-pipeline)
 
 ## When to install

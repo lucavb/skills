@@ -39,6 +39,8 @@ Validators may spawn extra digs or sub-searches; prefer disproof over confirmati
 
 Hygiene disproof patterns: [COMMIT-HYGIENE.md](COMMIT-HYGIENE.md#adversarial-disproof).
 
+Review set: validator inputs per [REVIEW-SET.md](REVIEW-SET.md#validator-inputs).
+
 ## Re-adjudicate
 
 | Validator says | You do |

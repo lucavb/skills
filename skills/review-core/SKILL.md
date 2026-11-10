@@ -35,6 +35,9 @@ Target: {TARGET}
 Repo: {FULL_REPO_PATH}
 Branch: {BRANCH_OR_DETACHED}
 Head: {HEAD_SHA}
+Review item: {OWNER/REPO#N | N/A}
+Source mode: {REUSED_CHECKOUT | DETACHED_WORKTREE | STASHED_CHECKOUT | N/A}
+Source restore: {WORKTREE_PATH | STASH_SHA_AND_ORIGIN | N/A}
 Diff source: {EXACT_PR_RANGE_COMMIT_OR_WORKTREE_SOURCE}
 Working-tree components: {STAGED | UNSTAGED | UNTRACKED | NONE}
 Commands: {EXACT_READ_ONLY_SOURCE_COMMANDS}
@@ -43,6 +46,8 @@ Commits in range: {COUNT | 0}
 Commit SHAs: {LIST | N/A}
 Commit commands: {commands that produced the list | N/A}
 ```
+
+The three source fields are `N/A` for `local-diff` (its tree is read in place); for a GitHub PR, [PR-SOURCE.md](../review-tribunal/PR-SOURCE.md) defines them. Several PRs reviewed together carry one manifest each: [REVIEW-SET.md](REVIEW-SET.md).
 
 ## Step 1 — Blind critics
 
@@ -55,7 +60,7 @@ Details: [BLIND-REVIEW.md](BLIND-REVIEW.md).
 - Manifest lists commits → spawn hygiene critic per [COMMIT-HYGIENE.md](COMMIT-HYGIENE.md).
 - Paste [EXPLORATION.md](EXPLORATION.md) rules into every subagent prompt.
 
-**Completion criterion:** ≥2 independent reviews returned; wrong-diff reviews discarded; skipped roster lenses noted with reason.
+**Completion criterion:** ≥2 independent reviews returned; wrong-diff reviews discarded; skipped roster lenses noted with reason. A review set meets this per item ([REVIEW-SET.md](REVIEW-SET.md)).
 
 ## Step 2 — First tribunal
 
@@ -79,7 +84,7 @@ Feed validators: the finding, first-tribunal rationale, ticket/AC, sibling-repo 
 
 Re-adjudicate after validators return. Overturn freely when evidence wins.
 
-**Completion criterion:** each prior Hold has a CONFIRMED / DOWNGRADE / REJECT / UPGRADE verdict with evidence; revised scorecard published.
+**Completion criterion:** each prior Hold has a CONFIRMED / DOWNGRADE / REJECT / UPGRADE verdict with evidence; revised scorecard published. A review set meets this for every item.
 
 ## After review-core
 

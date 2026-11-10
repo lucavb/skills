@@ -37,6 +37,8 @@ Verify with **Read** / **Grep** / **Glob** before ruling — not shell `find`/`r
 8. **Better alternative?** Apply the review-time bar in [ALTERNATIVES.md](ALTERNATIVES.md); reject elegance-only proposals.
 9. **Hygiene** Holds/Rejects: [COMMIT-HYGIENE.md](COMMIT-HYGIENE.md). Challenge: fixable before merge (split, restage, amend, rewrite message)?
 
+Review set: each finding belongs to one item — [REVIEW-SET.md](REVIEW-SET.md#attribution).
+
 ## Common Reject patterns
 
 - Finding assumes an entrypoint the product never uses (e.g. onboarding redirect for farm collaborator emails).

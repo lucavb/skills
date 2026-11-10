@@ -10,11 +10,15 @@
 
 One pending review per user per PR. Delete or submit before starting another.
 
-Get head SHA once:
+Use the manifest's `Head` as `{head_sha}`. Before creating the pending review, confirm it still matches the live head; on a mismatch, stop and ask whether to re-pin ([PR-SOURCE.md](PR-SOURCE.md#pin)) and re-review:
 
 ```bash
 gh pr view {pr} --repo {owner}/{repo} --json headRefOid -q .headRefOid
 ```
+
+## Review set
+
+Each PR of a [review set](PR-SET.md) is posted on its own terms: `{owner}/{repo}`, `{pr}`, `{head_sha}`, and pending review come from that item's manifest. Keep an `item → review_id / node_id` map. Before every post, confirm the finding's item equals the target PR. Walk findings grouped by PR with the PR named, and give each PR its own summary and submission.
 
 ## Constraint: line must be in the diff
 

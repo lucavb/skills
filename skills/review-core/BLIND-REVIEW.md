@@ -73,6 +73,7 @@ Rules:
 - Cite file paths and line regions where possible.
 - If the change looks sound, say so briefly — still list residual risks.
 - Judge only observable behavior and code.
+- More than one manifest (review set): follow REVIEW-SET.md and tag every finding with its item.
 ```
 
 For the **Alternatives** lens, also require the critic to survey: sibling flows in-repo, align-with-existing-pattern options, smaller-invariant fixes, and whether the change invents unnecessary branching or abstraction. For each proposal — current approach, alternative, why superior *for this ticket*, swap-now vs defer, residual risk of keeping current. Details: [ALTERNATIVES.md](ALTERNATIVES.md).
