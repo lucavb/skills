@@ -6,7 +6,7 @@ Agents write commit subjects that restate the diff ("add validation to form", "u
 
 ## What it does
 
-**Hard gate** before every `git commit`: learn repo style, bound the staged diff, write a why-grounded message, cross-check against the patch, and state the chosen subject in the reply before committing. Collapses duplicate git prep from user rules into one pass so nothing else substitutes for it.
+**Hard gate** before every `git commit`: learn repo style, bound the staged diff, write a why-grounded message, cross-check against the patch, and state the chosen subject in the reply before committing. Rationale that rests on external docs is cited in a `Sources:` footer (link plus a one-line abstract of the passage, taken from the conversation), so it stays verifiable after the page changes. Collapses duplicate git prep from user rules into one pass so nothing else substitutes for it.
 
 ## When to install
 

@@ -37,6 +37,10 @@ Commit mode adds repository mutation after Step 4.
    - `git log --oneline -20` and two full bodies with
      `git show --format='%B' -s <hash>`
    - `git status --short` and the complete staged diff (`git diff --cached`)
+   - Provenance: the sources already in this conversation (user messages,
+     fetched pages, search results, ticket text) that explain why the change is
+     needed, and the footer style in the logged bodies (`Refs:`, `See:`,
+     `Closes #`)
    Classify every staged path and hunk as intended or unrelated. In draft mode,
    report unrelated work without changing the index. In commit mode, restage only
    within the user's commit authorization; ask when intended scope is ambiguous.
@@ -51,15 +55,26 @@ Commit mode adds repository mutation after Step 4.
    Use prose for one cohesive change; use a `Changes:` list only for genuinely
    independent changes. Ground why-claims in concrete files, symbols, errors,
    behavior, or tickets.
+   Cite provenance when a why-claim rests on external behavior (service limits,
+   API semantics, deprecations, version constraints): end the message with a
+   blank line and `Sources:` (or the repo's footer keyword), one line per source,
+   at most three:
+   `- <URL> — <abstract of the passage relied on> (<doc version or date>)`.
+   The abstract keeps the rationale readable after the page changes. Example:
+   `- https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html — max function timeout is 900 s, hence the 15 min cap (checked 2026-11)`
    Criterion: the subject states the intent, while the body adds reasoning that the
    diff cannot show.
 3. **Cross-check.** Compare the message line by line with the staged diff. Remove
    claims supported only by unstaged files, assumptions, or unrun validation.
    Criterion: every staged change is accounted for, every why-claim has concrete
-   evidence, and the message contains no unrelated claim.
+   evidence, every footer URL appears verbatim in this conversation, every
+   abstract matches its source, every external-behavior why-claim carries a
+   source or is softened, and the message contains no unrelated claim.
 4. **State and deliver.** Before `git commit` (commit mode) or before returning
    (draft mode), state in the reply: the chosen subject, one sentence of body
-   rationale, and any blocked follow-up (e.g. values not in this commit). In
+   rationale, the cited sources (or "no external source applicable"; when the
+   change leans on external behavior and the conversation holds no source, say
+   so), and any blocked follow-up (e.g. values not in this commit). In
    commit mode, create the commit, then report its hash and whether unrelated work
    remains in the working tree. Treat a commit as repository state only; report
    deployment or validation only when its evidence was actually observed.
