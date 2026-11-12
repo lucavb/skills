@@ -26,6 +26,7 @@ npx skills add lucavb/skills --skill ticket-to-pr-pipeline
 | Review an open PR, a set of related PRs, or a local diff (including "is there a cleaner way?") | `review-core` + `review-tribunal` |
 | Stop deferring discovery — explore before presenting a plan | `discover-before-planning` |
 | GitHub URLs / explore remote repo source | `gh-fetch` |
+| Clear or maintain a Renovate dashboard with per-update verification | `renovate-librarian` |
 | Estimate Jira story points from done-ticket benchmarks | `story-point-estimation` |
 | Pick what to work on next from the sprint board or PR queue | `scrum-next` |
 | Surface doubts and blind spots before accepting agent work | `closing-ritual` |
@@ -56,6 +57,7 @@ npx skills add lucavb/skills --skill review-tribunal \
 | `ticket-to-pr-pipeline` | End-to-end Jira ticket flow with plan, build, review-core, and PR | [README](skills/ticket-to-pr-pipeline/README.md) |
 | `review-tribunal` | PR, related-PR set, or local-diff review — intake, review-core, target-specific delivery | [README](skills/review-tribunal/README.md) |
 | `refining-jira-tickets` | Pre-scrum refinement — trace codebase, spot plot holes, comment on Jira | [README](skills/refining-jira-tickets/README.md) |
+| `renovate-librarian` | Renovate dashboard queue — inventory, apply, per-update verify, close out | [README](skills/renovate-librarian/README.md) |
 | `scrum-next` | Next-work triage — sprint item, own-PR updates, or PR review with evidence | [README](skills/scrum-next/README.md) |
 | `story-point-estimation` | Size Jira tickets by benchmarking done work with SP set | [README](skills/story-point-estimation/README.md) |
 | `atlassian-jira-adf-formatting` | ADF round-trip for Jira story tables with bulleted Requirements/AC cells | [README](skills/atlassian-jira-adf-formatting/README.md) |
@@ -104,6 +106,7 @@ npx skills update
 - **scrum-next**, **ticket-to-pr-pipeline**: GitHub CLI (`gh`) for PR state and creation.
 - **review-tribunal**: GitHub CLI (`gh`) only for PR intake and posting; local-diff reviews use Git. A separate `worktrees` skill (not in this repo) enables isolated PR worktrees.
 - **gh-fetch**: GitHub CLI (`gh`) authenticated for fetch and clone.
+- **renovate-librarian**: GitHub MCP or GitHub CLI (`gh`) for Renovate PRs and dashboard state; local package-manager tooling for lockfiles and checks.
 
 ## License
 
