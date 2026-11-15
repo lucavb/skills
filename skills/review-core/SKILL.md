@@ -51,16 +51,17 @@ The three source fields are `N/A` for `local-diff` (its tree is read in place); 
 
 ## Step 1 — Blind critics
 
-Spawn parallel **blind** judges — ticket + diff + intel facts only; no implementer rationale.
+Spawn parallel **blind** judges — ticket + diff + intel facts only; no implementer rationale. Each critic is a separate subagent.
 
 Details: [BLIND-REVIEW.md](BLIND-REVIEW.md).
 
 - Pick distinct lenses from the roster; floor ≥2 independent critics.
 - **Alternatives critic is required** for `mode: review`; default for `mode: implement` unless diff is trivial (note skip on scorecard).
+- For substantive changes in either mode, spawn a separate **Operational Reviewer** concurrently with the other critics using [OPERATIONAL-REVIEWER.md](OPERATIONAL-REVIEWER.md). Skip only a truly trivial change and record the reason on the scorecard.
 - Manifest lists commits → spawn hygiene critic per [COMMIT-HYGIENE.md](COMMIT-HYGIENE.md).
 - Paste [EXPLORATION.md](EXPLORATION.md) rules into every subagent prompt.
 
-**Completion criterion:** ≥2 independent reviews returned; wrong-diff reviews discarded; skipped roster lenses noted with reason. A review set meets this per item ([REVIEW-SET.md](REVIEW-SET.md)).
+**Completion criterion:** ≥2 independent reviews with distinct lenses returned; for a substantive change, the Operational Reviewer has returned a review, or a truly trivial skip has a scorecard reason; wrong-diff reviews are discarded; skipped roster lenses are noted with reason. A review set meets this per item ([REVIEW-SET.md](REVIEW-SET.md)).
 
 ## Step 2 — First tribunal
 
@@ -96,7 +97,7 @@ Re-adjudicate after validators return. Overturn freely when evidence wins.
 ## Checklist
 
 ```
-- [ ] Blind critics (≥2 distinct lenses; alternatives unless trivial skip noted; hygiene run or skip noted)
+- [ ] Blind critics (≥2 distinct lenses; Operational Reviewer report returned or trivial-skip reason; alternatives per mode; hygiene run or skip noted)
 - [ ] First tribunal scorecard
 - [ ] Adversarial validation + revised scorecard
 - [ ] Parent handoff (target-specific review delivery or implement fixes)

@@ -6,6 +6,8 @@ The table below is a **roster**, not a mandatory checklist. It shows what is *po
 
 **Alternatives is a default lens, not optional fluff.** Every review run must include a dedicated alternatives critic unless the diff is truly trivial (rename only, config bump, etc.; note skip on scorecard). For `mode: review`, the alternatives critic is **required** — the user wants to know if there is a cleaner, simpler, or more consistent implementation.
 
+**Operational Reviewer is a separate default critic.** For substantive changes in either mode, spawn its own blind subagent in parallel with the other critics. Skip it only for a truly trivial change and record the reason on the scorecard. Use the dedicated [OPERATIONAL-REVIEWER.md](OPERATIONAL-REVIEWER.md) prompt; do not fold this role into another critic.
+
 ## Roster
 
 | Lens | Focus |
@@ -16,6 +18,7 @@ The table below is a **roster**, not a mandatory checklist. It shows what is *po
 | **Consistency** | Sibling flows, divergent predicates for the same concept, missing events/permissions siblings have |
 | **Testing** | Coverage vs AC, mocks that fake success, untested false branches, e2e that never hits the new path |
 | **Alternatives** | Simpler or more principled designs; align-with-sibling options; unnecessary branching/abstraction; what to swap now vs defer — not elegance for its own sake |
+| **Operational Reviewer** | Production failure paths, connected behavior, realistic load, and the smallest safe fix; use the dedicated prompt |
 | **AC / behavior** | Ticket AC vs code; FE-only clauses; wrong-entrypoint risk |
 | **Hygiene** | Atomicity, scope, message alignment, history noise, repo log style |
 

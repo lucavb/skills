@@ -17,7 +17,7 @@ Every finding, row, and verdict carries an **item**. One heading, one rule set:
 
 Pass every critic all manifests, each item's diff and changed files, and the shared context. The prompt skeleton's `{SOURCE_MANIFEST}` becomes the manifest list, each labelled with its `Review item`. Critics see the whole set so cross-item contracts stay visible, then tag findings by item. Each critic's output ends with `Items covered` and `Items clean` (covered items with no findings).
 
-Coverage floor, **per item**: ≥2 critics with distinct lenses, an alternatives critic, and a hygiene critic when that item's manifest lists commits (otherwise a noted skip). One critic may span items; coverage counts per item. Hygiene tables are keyed by item and SHA.
+Coverage floor, **per item**: ≥2 critics with distinct lenses, an alternatives critic, a separate Operational Reviewer for every substantive item (or a scorecard reason for a truly trivial skip), and a hygiene critic when that item's manifest lists commits (otherwise a noted skip). One Operational Reviewer may cover multiple items, but every item's coverage must be explicit; coverage counts per item. Hygiene tables are keyed by item and SHA.
 
 **Completion criterion:** every item is covered by the floor above; wrong-diff reviews are discarded per item.
 

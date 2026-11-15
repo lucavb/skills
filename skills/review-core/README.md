@@ -6,7 +6,7 @@ Blind review, tribunal, and adversarial validation were duplicated across `revie
 
 ## What it does
 
-Shared adversarial review engine: **blind parallel critics** (including a required alternatives lens for review mode, and a **hygiene** critic for commit structure and messages when the manifest lists commits) → **tribunal** (Hold / Reject / Defer) → **adversarial re-validation**.
+Shared adversarial review engine: **blind parallel critics** (including a separate Operational Reviewer by default for substantive changes in either mode, a required alternatives lens for review mode, and a **hygiene** critic for commit structure and messages when the manifest lists commits) → **tribunal** (Hold / Reject / Defer) → **adversarial re-validation**.
 
 Not usually installed alone. Parent skills set `mode`:
 
