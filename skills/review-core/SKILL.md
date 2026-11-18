@@ -28,7 +28,7 @@ Parents must set **mode** before running:
 
 All phases and subagents follow [EXPLORATION.md](EXPLORATION.md). Paste those rules into every critic and validator prompt.
 
-Before Step 1, the caller fills this source manifest and reuses it unchanged across critics, validators, and scorecards:
+Before Step 1, the caller fills this source manifest and reuses it unchanged across critics, validators, and scorecards within that review snapshot. If the reviewed head changes, start a new snapshot: prepare and verify a fresh manifest pinned to the new head before further review. Never mutate the old manifest or reuse its pin for new source.
 
 ```text
 Target: {TARGET}
@@ -73,7 +73,7 @@ Verify claims with **Read** / **Grep** / **Glob** before ruling.
 
 Publish a scorecard to the user (finding → verdict → why). In `review` mode, hand findings to the parent only after adversarial validation; in `implement` mode, wait for validation before changing code.
 
-**Completion criterion:** every material finding has an explicit verdict; user can see the audit trail.
+**Completion criterion:** every material finding has an explicit verdict and the compact evidence record defined in [ADVERSARIAL.md](ADVERSARIAL.md#evidence-record); user can see the audit trail.
 
 ## Step 3 — Adversarial validation
 
@@ -85,7 +85,7 @@ Feed validators: the finding, first-tribunal rationale, ticket/AC, sibling-repo 
 
 Re-adjudicate after validators return. Overturn freely when evidence wins.
 
-**Completion criterion:** each prior Hold has a CONFIRMED / DOWNGRADE / REJECT / UPGRADE verdict with evidence; revised scorecard published. A review set meets this for every item.
+**Completion criterion:** every prior Hold has its own independent adversarial validation and a CONFIRMED / DOWNGRADE / REJECT / UPGRADE verdict carrying the challenged evidence record defined in [ADVERSARIAL.md](ADVERSARIAL.md#evidence-record); revised scorecard published. A review set meets this for every item. For requested repeat validation, apply [ADVERSARIAL.md](ADVERSARIAL.md#repeat-validation).
 
 ## After review-core
 
