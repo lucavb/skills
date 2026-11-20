@@ -28,7 +28,7 @@ Select one target before calling target-specific tools:
 
 If both targets are explicit, ask which one to review.
 
-For `github-pr`, fetch metadata, files, commits, existing reviews, and head SHA with `gh`; select the source so repository reads match the pinned diff per [PR-SOURCE.md](PR-SOURCE.md). A review set runs this per PR.
+For `github-pr`, fetch metadata, files, commits, existing reviews, and head SHA with `gh`; follow [PR-SOURCE.md](PR-SOURCE.md) for live-head re-verification, exact local commit-object selection, and protected source setup so repository reads match the pinned diff. A review set runs this per PR.
 
 For `local-diff`, follow [LOCAL-DIFF.md](LOCAL-DIFF.md). Its source manifest is the single source of truth for the reviewed range and working-tree scope.
 

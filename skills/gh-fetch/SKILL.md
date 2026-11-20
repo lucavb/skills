@@ -24,6 +24,7 @@ Before **checkout**, decide: will this task need more than one file read or a re
 - **No** → **fetch** branch (Step 3).
 - **Yes** → **checkout** branch (Step 4).
 - Task expands mid-run → re-**foresee** before the second access; switch branches if needed.
+- **review-tribunal `github-pr` flow** → follow [pinned-source rules](../review-tribunal/PR-SOURCE.md) before reading PR code. Other pinned PR-source tasks may use these rules when the sibling skill is installed; independent `gh-fetch` requests do not depend on review-tribunal.
 
 **Completion criterion:** branch chosen and recorded (fetch vs checkout).
 

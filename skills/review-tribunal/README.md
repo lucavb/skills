@@ -8,7 +8,7 @@ Ad-hoc reviews skip blind critics, tribunal, and adversarial validation. Finding
 
 Enforces a repeatable review pipeline for an open PR, a set of related PRs, or a local Git diff: **targeted intake + intel → review-core (blind critics including alternatives → tribunal → adversarial validation) → delivery**. Local reviews end in an evidence-linked scorecard; PR reviews continue through interactive GitHub posting, one pending review per PR.
 
-PR reviews pin each head SHA and read from a clean matching checkout, else an isolated detached worktree, else (with approval) a stash that is restored afterwards. Your existing checkout is not changed otherwise.
+PR reviews pin each head SHA and read from a clean matching checkout, else an isolated detached worktree, else (with approval) a stash that is restored afterwards. Follow [PR-SOURCE.md](PR-SOURCE.md) for exact pin verification and source safeguards. Your existing checkout is not changed otherwise.
 
 ## When to install
 
